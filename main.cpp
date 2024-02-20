@@ -2,8 +2,8 @@
 
 int main()
 {
-	Student student[N];
+	Student *head;
 
-	makeStudent(student);
-	printStudent(student);
+	head = makeStudent();
+	printStudent(head);
 }

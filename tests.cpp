@@ -7,19 +7,27 @@
 
 TEST_CASE("Ex1 ", "[example]")
 {
-	Student student[N];
+	Student *head, *tmp;
 
-	makeStudent(student);
-	printStudent(student);
+	head = makeStudent();
+	printStudent(head);
 
-	REQUIRE(student[0].id == 10001);
-	REQUIRE(student[1].id == 10002);
-	REQUIRE(student[2].id == 10003);
-	REQUIRE(student[3].id == 10004);
-	REQUIRE(student[4].id == 10005);
-	REQUIRE(student[4].name == "Mateo");
-	REQUIRE(student[4].major == "Geometry");
+	tmp = head;
+	REQUIRE(head->id == 10001);
+	REQUIRE(head->name == "John");
+	REQUIRE(head->major == "Math");
 
+	tmp = tmp->next;
+	REQUIRE(tmp->id == 10002);
+	REQUIRE(tmp->name == "James");
+	REQUIRE(tmp->major == "Physics");
+
+	tmp = tmp->next;
+	REQUIRE(tmp->id == 10003);
+	tmp = tmp->next;
+	REQUIRE(tmp->id == 10004);
+	tmp = tmp->next;
+	REQUIRE(tmp->id == 10005);
 	cout << "--------------------------------------------------\n";
 	cout << "--------------------------------------------------\n";
 }
